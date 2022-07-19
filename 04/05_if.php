@@ -9,7 +9,7 @@ for ($i = 2; $i <=$num; $i++ ) {
         $msg = '素数ではありません';
         break;
     }
-    elseif($i = 1){
+    elseif($i == 1){
         $msg = '素数ではありません';
     }
     else {
