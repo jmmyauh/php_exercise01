@@ -1,13 +1,3 @@
-<?php
-
-// 変数を用意
-$msg = '';
-
-// methodがPOSTだったら変数に値をセットする
-if ($_SERVER['REQUEST_METHOD'] === 'POST') {
-    $msg = $_POST['name'];
-}
-?>
 <!DOCTYPE html>
 <html lang="ja">
 

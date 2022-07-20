@@ -27,7 +27,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 
 <head>
     <meta charset="UTF-8">
-    <title>1.フォームの作成</title>
+    <title>5.フォームの作成</title>
 </head>
 
 <body>

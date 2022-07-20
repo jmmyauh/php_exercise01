@@ -1,11 +1,11 @@
 <?php
 
 // 変数を用意
-$msg = '';
+$age = '';
 
 // methodがPOSTだったら変数に値をセットする
 if ($_SERVER['REQUEST_METHOD'] === 'POST') {
-    $msg = $_POST['age'];
+    $age = $_POST['age'];
 }
 ?>
 <!DOCTYPE html>
@@ -28,8 +28,8 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
         </div>
     </form>
 
-    <!-- <p><?php echo "私は{$msg}歳です"; ?></p> -->
-    <p><?=htmlspecialchars("私は{$msg}歳です", ENT_QUOTES, 'UTF-8') ?></p>
+    <!-- <p><?php echo "私は{$age}歳です"; ?></p> -->
+    <p><?=htmlspecialchars("私は{$age}歳です", ENT_QUOTES, 'UTF-8') ?></p>
 </body>
 
 </html>

@@ -12,6 +12,6 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     <title>2.フォームの作成</title>
 </head>
 <body>
-    <br><a href="http://localhost/06/02_form.php">戻る</a>
+    <br><a href="02_form.php">戻る</a>
 </body>
 </html>
