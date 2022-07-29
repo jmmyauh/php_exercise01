@@ -10,7 +10,9 @@ $select_stylist = '';
 // $kname = $stylists['ハイスタイリスト'];
 // $kyname = $stylists['トップスタイリスト'];
 
-$select_stylist = $_POST['stylists'];
+if ($_SERVER['REQUEST_METHOD'] === 'POST'){
+    $select_stylist = $_POST['stylists'];
+}
 ?>
 
 <!DOCTYPE html>
@@ -27,10 +29,9 @@ $select_stylist = $_POST['stylists'];
     <h1>希望する美容師のランクを選んでください</h1>
     <form action="" method="post">
         <select name="stylists">
-            <?php 
-            foreach ($stylists as $key => $name ) {
-                print('<option value="'. $key.'">' . $key.'</option>');
-            }?>
+            <?php foreach ($stylists as $key => $name ):?>
+                <option value="<?=$key?>"><?=$key?></option>
+            <?php endforeach ;?>
             <!-- <option value="stylist">スタイリスト</option>
             <option value="highstylist">ハイスタイリスト</option>
             <option value="topstylist">トップスタイリスト</option> -->
@@ -44,12 +45,6 @@ $select_stylist = $_POST['stylists'];
             print("あなたの担当は{$name}です");
         }
     }?>
-
-    <!-- <?php if ($select_stylist == 'スタイリスト') : ?>
-        <p><?php print("あなたの担当は{$value}です" )?></p>
-    
-        <p><?php print('') ?></p>
-    <?php endif; ?> -->
 </body>
 
 </html>

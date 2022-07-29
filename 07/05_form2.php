@@ -9,20 +9,14 @@ $key = '';
 $err_msgs = [];
 $items = ['バッグ', '靴', '時計', 'ネックレス', 'ピアス'];
 
-$item_key = $_POST['items'];
-
-foreach ($items as $keys) {
-    if ($item_key == $keys) {
-        $key = '購入するもの:   ' . $keys;
-    }
-}
-
 
 // methodがPOSTだったら変数に値をセットする
 if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     $name = $_POST['name'];
     $tel = $_POST['tel'];
     $email = $_POST['email'];
+    $item_key = $_POST['items'];
+
 
     if (empty($name)) {
         $err_msgs[] = '氏名を入力してください';

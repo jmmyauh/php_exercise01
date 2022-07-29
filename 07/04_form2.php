@@ -7,15 +7,7 @@ $email = '';
 $item_key = '';
 $key = '';
 $err_msgs = [];
-$items = ['バック','靴','時計','ネックレス','ピアス'];
-
-$item_key = $_POST['items'];
-
-foreach ($items as $keys) {
-    if ($item_key == $keys) {
-        $key = '購入するもの:   ' . $keys;
-    }
-}
+$items = ['バッグ','靴','時計','ネックレス','ピアス'];
 
 
 // methodがPOSTだったら変数に値をセットする
@@ -23,6 +15,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     $name = $_POST['name'];
     $tel = $_POST['tel'];
     $email = $_POST['email'];
+    $item_key = $_POST['items'];
 
     if (empty($name)) {
         $err_msgs[] = '氏名を入力してください';
@@ -78,15 +71,14 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
         <div>
             <?php if ($name && $tel && $email):?>
                 <h2>以下の内容が送信されました｡</h2>
-                <p> 氏名:           <?=$name?><br>
-                    電話番号:       <?=$tel?><br>
-                    メールアドレス: <?=$email?><br>
-                    <?=$key?><br>
+                <p> 氏名:　　　　　　<?=htmlspecialchars($name, ENT_QUOTES, 'UTF-8') ?><br>
+                    電話番号:　　　　<?=htmlspecialchars($tel, ENT_QUOTES, 'UTF-8') ?><br>
+                    メールアドレス:　<?=htmlspecialchars($email, ENT_QUOTES, 'UTF-8') ?><br>
+                    購入するもの:　　<?=$item_key?><br>
                 </p>
             <?php endif;?>
         </div>
     </form>
-    <!-- <p><?=htmlspecialchars($name, $tel, $email, ENT_QUOTES, 'UTF-8') ?></p> -->
 </body>
 
 </html>
